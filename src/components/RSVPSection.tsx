@@ -31,7 +31,7 @@ export default function RSVPSection() {
             style={{ fontFamily: "var(--font-cormorant)" }}
           >
             Please confirm your attendance by{" "}
-            <span className="text-gold">March 13, 2026</span>
+            <span className="text-gold">March 14, 2026</span>
           </p>
         </div>
 

@@ -18,7 +18,7 @@ export default function Footer() {
           className="text-amber-300/50 italic text-lg mb-10"
           style={{ fontFamily: "var(--font-cormorant)" }}
         >
-          Together Again — March 27, 2026
+          Together Again — March 28–29, 2026
         </p>
 
         {/* Quick links */}
