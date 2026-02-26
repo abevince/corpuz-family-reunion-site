@@ -45,21 +45,21 @@ const schedule = [
 
 export default function ScheduleSection() {
   return (
-    <section id="schedule" className="relative py-32 overflow-hidden">
+    <section id="schedule" className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0a1a] via-[#120820] to-[#0d0a1a]" />
 
       {/* Side glow */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-10 blur-3xl"
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 rounded-full opacity-10 blur-3xl"
         style={{ background: "radial-gradient(circle, #d4af37, transparent)" }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-20">
-          <p className="text-xs tracking-[0.4em] uppercase text-amber-300/50 mb-4">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <p className="text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-amber-300/50 mb-4">
             What to expect
           </p>
           <h2
-            className="text-4xl md:text-6xl font-bold text-amber-50 mb-4"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-amber-50 mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Evening <span className="italic text-gold">Schedule</span>
@@ -71,41 +71,42 @@ export default function ScheduleSection() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
+          {/* Vertical line — desktop only */}
           <div className="absolute left-[88px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent hidden md:block" />
 
-          <div className="space-y-10">
+          <div className="space-y-4 sm:space-y-6 md:space-y-10">
             {schedule.map((item, i) => (
-              <div key={i} className="flex gap-6 group">
-                {/* Time */}
+              <div key={i} className="flex gap-4 md:gap-6 group">
+                {/* Time — desktop only */}
                 <div className="hidden md:flex flex-col items-end w-20 shrink-0 pt-3">
                   <span className="text-xs text-gold/70 tracking-widest font-mono whitespace-nowrap">
                     {item.time}
                   </span>
                 </div>
 
-                {/* Dot */}
+                {/* Dot — desktop only */}
                 <div className="hidden md:flex items-start pt-4 relative z-10">
                   <div className="w-4 h-4 rounded-full border-2 border-gold/50 bg-[#0d0a1a] group-hover:bg-gold group-hover:border-gold transition-all duration-300 shrink-0" />
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 glass rounded-2xl p-6 group-hover:border-gold/40 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <span className="text-2xl">{item.icon}</span>
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
+                <div className="flex-1 glass rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 group-hover:border-gold/40 transition-all duration-300">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <span className="text-xl sm:text-2xl shrink-0">{item.icon}</span>
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                         <h3
-                          className="text-lg font-semibold text-amber-50"
+                          className="text-base sm:text-lg font-semibold text-amber-50"
                           style={{ fontFamily: "var(--font-playfair)" }}
                         >
                           {item.title}
                         </h3>
-                        <span className="md:hidden text-xs text-gold/60 font-mono">
+                        {/* Time badge on mobile */}
+                        <span className="md:hidden text-xs text-gold/60 font-mono bg-gold/10 px-2 py-0.5 rounded-full whitespace-nowrap">
                           {item.time}
                         </span>
                       </div>
-                      <p className="text-sm text-amber-200/60 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-amber-200/60 leading-relaxed">
                         {item.description}
                       </p>
                     </div>

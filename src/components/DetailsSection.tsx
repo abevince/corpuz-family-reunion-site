@@ -29,21 +29,19 @@ const details = [
 
 export default function DetailsSection() {
   return (
-    <section id="details" className="relative py-32 overflow-hidden">
+    <section id="details" className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0d2e] to-[#0d0a1a]" />
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-gold/40 to-transparent"
-      />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className="text-center mb-20">
-          <p className="text-xs tracking-[0.4em] uppercase text-amber-300/50 mb-4">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <p className="text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-amber-300/50 mb-4">
             Mark your calendars
           </p>
           <h2
-            className="text-4xl md:text-6xl font-bold text-amber-50 mb-4"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-amber-50 mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Event <span className="italic text-gold">Details</span>
@@ -54,44 +52,44 @@ export default function DetailsSection() {
         </div>
 
         {/* Detail cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {details.map((item, i) => (
             <div
               key={i}
-              className="glass rounded-3xl p-8 text-center group hover:border-gold/40 transition-all duration-300 hover:scale-105"
+              className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center group hover:border-gold/40 transition-all duration-300 hover:scale-105"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full gold-gradient mb-6 group-hover:scale-110 transition-transform duration-300">
-                <item.icon className="w-6 h-6 text-[#0d0a1a]" strokeWidth={2} />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full gold-gradient mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d0a1a]" strokeWidth={2} />
               </div>
               <p className="text-xs tracking-[0.2em] uppercase text-amber-300/50 mb-2">
                 {item.label}
               </p>
               <p
-                className="text-xl font-semibold text-amber-50 mb-1"
+                className="text-base sm:text-lg md:text-xl font-semibold text-amber-50 mb-1 leading-tight"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 {item.value}
               </p>
-              <p className="text-sm text-amber-300/60 italic">{item.sub}</p>
+              <p className="text-xs sm:text-sm text-amber-300/60 italic">{item.sub}</p>
             </div>
           ))}
         </div>
 
         {/* Map placeholder */}
-        <div className="mt-16 glass rounded-3xl overflow-hidden">
-          <div className="relative h-64 md:h-80 flex items-center justify-center bg-gradient-to-br from-purple-900/20 to-indigo-900/20">
-            <div className="text-center">
-              <MapPin className="w-10 h-10 text-gold mx-auto mb-3" />
+        <div className="mt-10 sm:mt-16 glass rounded-2xl sm:rounded-3xl overflow-hidden">
+          <div className="relative h-52 sm:h-64 md:h-80 flex items-center justify-center bg-gradient-to-br from-purple-900/20 to-indigo-900/20">
+            <div className="text-center px-4">
+              <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-gold mx-auto mb-3" />
               <p
-                className="text-2xl font-semibold text-amber-50"
+                className="text-lg sm:text-2xl font-semibold text-amber-50"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 The Grand Ballroom
               </p>
-              <p className="text-amber-300/60 mt-1">123 Reunion Avenue, Manila</p>
+              <p className="text-sm sm:text-base text-amber-300/60 mt-1">123 Reunion Avenue, Manila</p>
               <a
                 href="#"
-                className="mt-4 inline-block text-xs tracking-widest uppercase text-gold border border-gold/40 px-6 py-2 rounded-full hover:bg-gold/10 transition-colors"
+                className="mt-4 inline-block text-xs tracking-widest uppercase text-gold border border-gold/40 px-5 sm:px-6 py-2 rounded-full hover:bg-gold/10 transition-colors"
               >
                 View on Map
               </a>

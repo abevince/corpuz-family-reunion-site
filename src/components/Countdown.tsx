@@ -20,17 +20,17 @@ function getTimeLeft() {
 
 function Digit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="glass rounded-2xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center glow-pulse relative overflow-hidden">
+    <div className="flex flex-col items-center gap-1.5 sm:gap-2">
+      <div className="glass rounded-xl sm:rounded-2xl w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center glow-pulse relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent" />
         <span
-          className="text-3xl md:text-5xl font-bold text-gold tabular-nums"
+          className="text-xl sm:text-3xl md:text-5xl font-bold text-gold tabular-nums"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           {String(value).padStart(2, "0")}
         </span>
       </div>
-      <span className="text-xs md:text-sm uppercase tracking-[0.2em] text-amber-300/70">
+      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-amber-300/70">
         {label}
       </span>
     </div>
@@ -48,14 +48,14 @@ export default function Countdown() {
   }, []);
 
   return (
-    <div className="flex gap-4 md:gap-8 justify-center">
+    <div className="flex gap-2 sm:gap-4 md:gap-8 justify-center items-start">
       <Digit value={timeLeft.days} label="Days" />
-      <div className="flex items-center pb-8 text-gold text-3xl md:text-5xl font-light">:</div>
+      <div className="flex items-center pb-7 sm:pb-8 text-gold text-xl sm:text-3xl md:text-5xl font-light">:</div>
       <Digit value={timeLeft.hours} label="Hours" />
-      <div className="flex items-center pb-8 text-gold text-3xl md:text-5xl font-light">:</div>
-      <Digit value={timeLeft.minutes} label="Minutes" />
-      <div className="flex items-center pb-8 text-gold text-3xl md:text-5xl font-light">:</div>
-      <Digit value={timeLeft.seconds} label="Seconds" />
+      <div className="flex items-center pb-7 sm:pb-8 text-gold text-xl sm:text-3xl md:text-5xl font-light">:</div>
+      <Digit value={timeLeft.minutes} label="Mins" />
+      <div className="flex items-center pb-7 sm:pb-8 text-gold text-xl sm:text-3xl md:text-5xl font-light">:</div>
+      <Digit value={timeLeft.seconds} label="Secs" />
     </div>
   );
 }
